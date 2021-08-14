@@ -1,6 +1,7 @@
 package me.hsgamer.bettergui.repairaction;
 
 import me.hsgamer.bettergui.api.requirement.BaseRequirement;
+import me.hsgamer.bettergui.lib.core.variable.VariableManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -15,7 +16,7 @@ public class RepairableRequirement extends BaseRequirement<Boolean> {
 
     @Override
     public Boolean getParsedValue(UUID uuid) {
-        return Boolean.parseBoolean(String.valueOf(value));
+        return Boolean.parseBoolean(VariableManager.setVariables(String.valueOf(value), uuid));
     }
 
     @Override
